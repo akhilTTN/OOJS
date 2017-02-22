@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+var arr = [1, 2, 3, 4, 5];
+var j=0;
+var len=arr.length;
+//alert(len);
+var t="";
+function delays() {
+	if(j<len){
+  t=t+arr[j]+" ";
+  document.getElementById("tttt").innerHTML=t;
+        setTimeout(function(){
+          j++;
+          delays();
+        	}, 3000);
+}
+}
+delays();
+</script>
+</head>
+<body>
+   <div id='demo'></div>
+</body>
+</html>

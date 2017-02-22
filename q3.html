@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+function cal(){
+console.log("Example of call()");
+var person1 = {firstName: 'Akhil', lastName: 'Rawat'};
+var person2 = {firstName: 'Nitin', lastName: 'Ranjan'};
+ 
+function say(greeting) {
+    console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
+}
+ 
+say.call(person1, 'Hello'); 
+say.call(person2, 'Hi'); 
+}
+
+function bi(){
+console.log("Example of bind()");
+
+var person1 = {firstName: 'Akhil', lastName: 'Rawat'};
+var person2 = {firstName: 'Nitin', lastName: 'Ranjan'};
+
+function say(greeting) {
+    console.log(greeting + ' '+ this.firstName + ' ' + this.lastName);
+}
+
+var sayAll= say.bind(person1);
+sayAll('hi');
+sayAll = say.bind(person2);
+
+sayAll('hello');
+ 
+}
+
+cal();
+bi();
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+

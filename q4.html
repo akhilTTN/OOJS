@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	(function() {
+   console.log("length property");
+   console.log("passed arguement is 1, 2, 3, 4, 5")
+
+   function lengthArgument() {
+       console.log("length of the passed argument is " + arguments.length);
+   }
+   lengthArgument(1, 2, 3, 4, 5);
+
+   console.log("Iterator property");
+   console.log("passed arguement is 'a', 'b', 'c', 'd'")
+   function argumentsIterator() {
+       for (var a in arguments) {
+           console.log("Passed argument is : " + arguments[a]);
+       }
+   }
+   argumentsIterator('a', 'b', 'c', 'd');
+
+   console.log("arguments callee property");
+   function argumentCallee() {
+       return function(n) {
+           if (n <= 1)
+               return 1;
+           return n * arguments.callee(n - 1);
+       };
+   }
+   console.log("Calle property:  " + argumentCallee()(4));
+})();
+</script>
+</body>
+</html>

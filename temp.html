@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+		function _read(callback){
+    setTimeout(function(){
+        //console.log("read complete");
+        callback();
+    },1000);
+	
+	}
+	function rff()
+	{
+    console.log("start");
+    _read(function(){
+        console.log("read complete");
+    });
+    console.log("end");
+}
+rff();
+
+
+// function _read (callback) {
+// 	callback();
+// }
+// function rff()
+// 	{
+//     console.log("start");
+//     _read(function(){
+//         console.log("read complete");
+//     });
+//     console.log("end");
+// }
+// rff();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

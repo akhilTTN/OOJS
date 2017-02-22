@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+function Person(name){
+  this.name = name;
+}
+
+function Employee(name,position){
+ this.position = position;
+ Person.call(this,name);
+}
+
+Employee.prototype = new Person();
+Employee.prototype.constructor = Employee;
+
+function Developer(name,position,team){
+  this.team = team;
+  Employee.call(this,name,position);
+}
+
+Developer.prototype = new Employee();
+Developer.prototype.constructor = Developer;
+var dev = new Developer('Akhil','Trainee','JVM');
+
+console.log("Name :" +dev.name);
+console.log("Position : "+dev.position);
+console.log("Team : " +dev.team);
+
+console.log(dev);
+</script>
+</head>
+<body>
+</body>
+</html>
